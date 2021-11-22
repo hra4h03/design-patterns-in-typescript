@@ -63,3 +63,20 @@ iPhone8.clickPower(); // this will call opened state method which will turn it o
 iPhone8.clickVolumeUp();
 iPhone8.clickVolumeUp();
 iPhone8.clickVolumeDown();
+
+/**
+ * State Pattern helps to separate conditional logic into separate class.
+ * State Pattern supposed that application has finite state, and each
+ *  of them can have different implementation depending to the state.
+ *
+ * State Pattern Pros
+ *  * It replaces the ugly if/switch conditions with polymorphism.
+ *  * Clear understandable logic representation.
+ *  * Open/Close principle, we can introduce new state for application without changing the client code.
+ *  * Single Responsibility Principle. The client code should not
+ *     know about what action need to do for each state condition.
+ *
+ * State Pattern Cons
+ *  * Overkill for small amount of states or for states that rarely change.
+ *
+ */
