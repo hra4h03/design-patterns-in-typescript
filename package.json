@@ -6,10 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["design patterns", "SOLID", "typescript", "javascript"],
+  "keywords": [
+    "design patterns",
+    "SOLID",
+    "typescript",
+    "javascript"
+  ],
   "author": "Hrach2003",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^16.11.9",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.2"
   }
