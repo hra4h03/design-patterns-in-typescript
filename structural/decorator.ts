@@ -18,7 +18,7 @@ const WithSugarFactory = (amount = 1) => {
 
   return (constructor: Class<Beverage>) => {
     return class extends constructor {
-      cost() {
+      override cost() {
         return super.cost() + sugarCost * amount;
       }
     };
@@ -30,7 +30,7 @@ const WithEspressoFactory = (amount = 1) => {
 
   return (constructor: Class<Beverage>) => {
     return class extends constructor {
-      cost() {
+      override cost() {
         return super.cost() + espressoCost * amount; // actual price plus cost of sugar
       }
     };
@@ -42,7 +42,7 @@ const withSugar = (constructor: Class<Beverage>) => {
   const sugarCost = 3;
 
   return class extends constructor {
-    cost() {
+    override cost() {
       return super.cost() + sugarCost; // actual price plus cost of sugar
     }
   };
@@ -52,7 +52,7 @@ const withEspresso = (constructor: Class<Beverage>) => {
   const espressoCost = 5;
 
   return class extends constructor {
-    cost() {
+    override cost() {
       return super.cost() + espressoCost; // actual price plus cost of sugar
     }
   };
@@ -62,13 +62,13 @@ const withEspresso = (constructor: Class<Beverage>) => {
 @withEspresso
 @withSugar
 class Tea extends Beverage {
-  cost() {
+  override cost() {
     return 5;
   }
 }
 
 class Coffee extends Beverage {
-  cost() {
+  override cost() {
     return 8;
   }
 }
@@ -83,7 +83,7 @@ console.log(teaWithSugarAndEspresso.cost()); // cost will be: 13
 // or with decorator factory
 @WithSugarFactory(2)
 class Milk extends Beverage {
-  cost() {
+  override cost() {
     return 6;
   }
 }

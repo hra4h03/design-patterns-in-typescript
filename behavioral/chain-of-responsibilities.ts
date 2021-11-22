@@ -23,7 +23,7 @@ class AuthorizationHandler extends Handler {
     super(nextHandler);
   }
 
-  process(req: http.IncomingMessage, res: http.ServerResponse) {
+  override process(req: http.IncomingMessage, res: http.ServerResponse) {
     console.log("AuthorizationHandler: processing");
 
     const authorization = req.headers.authorization;
@@ -41,7 +41,7 @@ class AuthorizationHandler extends Handler {
 class UsersHandler extends Handler {
   static users = [{ name: "Aram" }, { name: "Anri" }];
 
-  async process(req: http.IncomingMessage, res: http.ServerResponse) {
+  override async process(req: http.IncomingMessage, res: http.ServerResponse) {
     console.log("UsersHandler: processing");
 
     res.writeHead(200, { "Content-Type": "application/json" });

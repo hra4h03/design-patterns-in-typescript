@@ -56,7 +56,7 @@ class FrameworkTrends extends Observable {
 class Programmer extends Observer<FrameworkTrends> {
   constructor(
     public type: string,
-    protected observable: FrameworkTrends,
+    observable: FrameworkTrends,
     public techStack: Technology[] = []
   ) {
     super(observable);
@@ -66,7 +66,7 @@ class Programmer extends Observer<FrameworkTrends> {
     this.techStack.push(technology);
   }
 
-  update() {
+  override update() {
     const newTrend = this.observable.trends[this.observable.trends.length - 1];
 
     if (!this.techStack.includes(newTrend)) {
